@@ -5,12 +5,12 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('ingredients').insert([
-        {name: 'bacon'},
-        {name: 'eggs'},
-        {name: 'steak'},
-        {name: 'butter'},
-        {name: 'bread'},
-        {name: 'cheddar chees'}
+        {ingredient_name: 'bacon'},
+        {ingredient_name: 'eggs'},
+        {ingredient_name: 'steak'},
+        {ingredient_name: 'butter'},
+        {ingredient_name: 'bread'},
+        {ingredient_name: 'cheddar chees'}
       ]);
     });
 };
