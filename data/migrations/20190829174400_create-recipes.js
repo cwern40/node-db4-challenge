@@ -16,7 +16,7 @@ exports.up = function(knex) {
             .inTable('ingredients')
             .onDelete('CASCADE')
             .onUpdate('CASCADE')
-        tbl.decimal('quantity', 128);
+        tbl.string('quantity', 128);
         tbl.string('step_comment').notNullable();
         tbl.integer('recipe_id')
             .unsigned()
