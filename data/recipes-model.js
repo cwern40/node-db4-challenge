@@ -10,9 +10,16 @@ function getRecipes() {
     return db('recipes');
 }
 
-function getShoppingList(id) {
+function getShoppingList(recipe_id) {
     return db('steps as s')
         .join('ingredients as i', 'i.id', 's.ingredients_id')
         .select('i.ingredient_name', 's.quantity')
-        .where(id = 's.recipe_id')
+        .where({ recipe_id })
+}
+
+function getInstructions(id) {
+    return db('steps as s')
+        .join('recipes as r', 'r.id', 's.recipe_id')
+        .select('s.step_number', 's.step_comment')
+        .orderBy('s.step_number')
 }
