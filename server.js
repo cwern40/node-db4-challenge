@@ -19,4 +19,19 @@ server.get('/', (req, res) => {
         })
 })
 
+server.get('/:id/list', (req, res) => {
+    const { id } = req.params
+
+    Recipes.getShoppingList(id)
+        .then(list => {
+            res.json(list)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({
+                message: "Error retrieving list"
+            })
+        })
+})
+
 module.exports = server;
