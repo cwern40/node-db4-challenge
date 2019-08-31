@@ -44,3 +44,7 @@ Build the following endpoints. Write any additional data access helpers as neede
 - `GET /api/recipes/:id/shoppingList`: a list of ingredients and quantites for a single recipe
 - `GET /api/recipes/:id/instructions`: a correctly ordered list of how to prepare a single recipe
 - `GET /api/ingredients/:id/recipes`: all recipes in the system that utilize a single ingredient 
+
+recipe: index, recipe name
+ingredients: index, ingredient name
+steps: index, number, ingredient_index, ingredient_quantity, ingredient_comment, recipe_index
