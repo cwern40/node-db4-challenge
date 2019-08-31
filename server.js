@@ -34,4 +34,19 @@ server.get('/:id/list', (req, res) => {
         })
 })
 
+server.get('/:id/steps', (req, res) => {
+    const { id } = req.params
+
+    Recipes.getInstructions(id)
+        .then(steps => {
+            res.json(steps)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({
+                message: "Error retrieving steps"
+            })
+        })
+})
+
 module.exports = server;
